@@ -1,0 +1,52 @@
+﻿body { 
+    font-family: Arial;
+    margin: 2rem;
+}
+
+.Grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+}
+
+.GridElements {
+    background-color: lightslategrey;
+    height: auto;
+    color: white;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+.GridElements * {
+    margin: 0.5rem;
+}
+
+#LoginContainer {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 2rem;
+}
+
+#HistoryContainer {
+    grid-column: 1;
+    grid-row: 2/4;
+}
+
+#MapContainer {
+    grid-column: 2/4;
+    grid-row: 1/4;
+}
+
+table {
+    text-align: left;
+}
+table * {
+    padding-right: 0.5rem;
+}
+
+input {
+    border: none;
+    background-color: white;
+    padding: 0.2rem;
+}
+

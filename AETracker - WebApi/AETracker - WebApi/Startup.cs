@@ -35,6 +35,8 @@ namespace AETracker___WebApi
             }
 
             app.UseMvc();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
         }
     }
 }

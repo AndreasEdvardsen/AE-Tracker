@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace AETracker___WebApi
+namespace AETrackerWebApiebApi
 {
     public class Startup
     {

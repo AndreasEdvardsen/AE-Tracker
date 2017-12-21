@@ -16,11 +16,41 @@
 </head>
 <body>
 
-<h1 id="Position"></h1>
-<p id="button">Click for position</p>
+<div id="LoginPage" class="page" style="display: block">
+    <h1>Log in</h1>
+    <p>User Id:</p>
+    <input type="text" id="UserIdLogin"/>
+    <h3>Log In</h3>
+    <h4>OR</h4>
+    <h3 id="registerButton">Register</h3>
+</div>
+    
+<div id="HomePage" class="page" style="display: none">
+    <h1>Welcome!</h1>
+    <h3>New Trip</h3>
+    <h3>Trip History</h3>
+</div>
+    
+<div id="NewTripPage" class="page"></div>
+
+<div id="TripHistoryPage" class="page"></div>
+
+<div id="NewUserPage" style="display: none" class="page">
+    <h1>New User:</h1>
+    <p>First Name:</p>
+    <input type="text" id="FirstNameInput"/>
+    <p>Last Name:</p>
+    <input type="text" id="LastNameInput"/>
+    <p>Email:</p>
+    <input type="text" id="Email"/>
+    <button class="submitButton">submit</button>
+</div>
 
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+
 <script type="text/javascript" src="scripts/index.js"></script>
+<script type="text/javascript" src="scripts/navigation.js"></script>
+
 </body>
 </html>

@@ -13,12 +13,6 @@ namespace AETrackerWebApi.Controllers
     public class TripController : Controller
     {
         [HttpGet]
-        public string NewTrip()
-        {
-            return "";
-        }
-
-        [HttpGet]
         public string NewPosition([FromQuery] Position newPos)
         {
             var dbConnection = new NewPositionToDb();

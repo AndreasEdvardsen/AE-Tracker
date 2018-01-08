@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<div id="LoginPage" class="page" style="display: block">
+<div id="LoginPage" class="page" style="display: none">
     <h1>Log in</h1>
     <p>User Id:</p>
     <input type="text" id="UserIdLogin"/>
@@ -27,11 +27,13 @@
     
 <div id="HomePage" class="page" style="display: none">
     <h1>Welcome!</h1>
-    <h3>New Trip</h3>
-    <h3>Trip History</h3>
+    <h3 id="newTripButton">New Trip</h3>
+    <h3 id="TripHistoryButton">Trip History</h3>
 </div>
     
-<div id="NewTripPage" class="page"></div>
+<div id="NewTripPage" class="page" style="display: none">
+   <h3 id="toggleTracker" >Start</h3>
+</div>
 
 <div id="TripHistoryPage" class="page"></div>
 

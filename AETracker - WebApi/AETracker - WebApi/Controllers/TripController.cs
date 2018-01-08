@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AETrackerWebApi.Models;
-using Microsoft.AspNetCore.Http;
+﻿using AETrackerWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AETrackerWebApi.Controllers
@@ -15,8 +10,9 @@ namespace AETrackerWebApi.Controllers
         [HttpGet]
         public string NewPosition([FromQuery] Position newPos)
         {
+            var pos = newPos;
             var dbConnection = new NewPositionToDb();
-            var uploadToDb = dbConnection.Upload(newPos);
+            var uploadToDb = dbConnection.Upload(pos);
 
             return uploadToDb ? $"New position is sucsessfully uploaded!" : $"Oops, something went wrong!";
         }

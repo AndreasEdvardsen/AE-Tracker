@@ -13,4 +13,9 @@ function onDeviceReady() {
             nextPage('NewUserPage');
         });
 
+    document.getElementById('newTripButton').addEventListener("click",
+        function () {
+            nextPage('NewTripPage');
+        });
+
 };

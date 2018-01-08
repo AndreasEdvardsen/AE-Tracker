@@ -5,7 +5,7 @@
 
 document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
-var UserId = "68be74a7-d3d8-46f4-a028-f085ddc49f13";
+var UserId;
 var currentTripId = "";
 
 var pageHistory = ['LoginPage'];
@@ -109,6 +109,30 @@ function UploadToDb(position) {
 function onError(error) {
     document.getElementById('Position').innerHTML =
         'code: ' + error.code + '\n' + 'message: ' + error.message + '\n';
+}
+
+document.getElementById('registerSubmitButton').addEventListener('click', function () {
+    var firstName = document.getElementById('FirstNameInput');
+    var lastName = document.getElementById('LastNameInput');
+    var email = document.getElementById('Email');
+    newUser(firstName, lastName, email);
+});
+
+function newUser(firstname, lastname, email) {
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            var response = xhttp.responseText;
+            UserId = response;
+
+            thisPage = document.getElementById('HomePage');
+            toggleVisibility(thisPage);
+        }
+    };
+    xhttp.open("GET", "http://localhost:53869/api/User?FirstName=" + firstname + "&LastName=" + lastname + "&Email=" + email, true);
+    xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhttp.send();
 }
 
 //Background mode handlers:

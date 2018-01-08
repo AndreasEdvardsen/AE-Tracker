@@ -12,40 +12,25 @@
     <div id="LoginContainer" class="GridElements">
         <p>User ID:</p>
         <input type="text" id="LoginID"/>
-        <input type="submit" name="submit"/>
+        <input id="loginButton" type="submit" name="submit"/>
     </div>
 
     <div id="HistoryContainer" class="GridElements">
         <h2>Trip History:</h2>
         <table id="HighScoresTable">
             <tr>
-                <th>Start:</th>
-                <th>Stop:</th>
+                <th>TripId:</th>
                 <th>Date:</th>
-            </tr>
-            <tr>
-                <td>Larvik</td>
-                <td>Sandefjord</td>
-                <td>11.12.2017</td>
-            </tr>
-            <tr>
-                <td>Larvik</td>
-                <td>Porsgrun</td>
-                <td>11.12.2017</td>
-            </tr>
-            <tr>
-                <td>Porsgrun</td>
-                <td>Oslo</td>
-                <td>11.12.2017</td>
             </tr>
         </table>
     </div>
 
     <div id="MapContainer" class="GridElements">
-        Map:
+        <div id="map"></div>
     </div>
 
 </div>
 <script src="main.js" class="GridElements"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCb9rttcGoBaKHcmNoLcZqK2Glgl6fzf-k&callback=initMap"></script>
 </body>
 </html>

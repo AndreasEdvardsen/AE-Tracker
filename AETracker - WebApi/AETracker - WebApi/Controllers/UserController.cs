@@ -15,12 +15,7 @@ namespace AETrackerWebApiebApi.Controllers
             var dbConnection = new NewUserToDb();
             var uploadToDb = dbConnection.Upload(newUser);
 
-            return uploadToDb ? $"New user is sucsessfully created!" : $"Oops, something went wrong!";
-        }
-
-        private Guid NewUserId()
-        {
-            return Guid.NewGuid();
+            return uploadToDb;
         }
     }
 }

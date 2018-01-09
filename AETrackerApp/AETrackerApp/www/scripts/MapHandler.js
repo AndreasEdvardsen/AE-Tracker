@@ -55,10 +55,10 @@ function insertTrips(response) {
     }
 
     var List = document.getElementById("tripList");
-
+    List.innerHTML = "";
     var counter = 0;
     for (var i = trips.length - 1; i >= 0; i--) {
-        if (counter > 10) break;
+        if (counter > 9) break;
         var li = document.createElement("li");
         (function(i) {
             var id = trips[i].tripId;

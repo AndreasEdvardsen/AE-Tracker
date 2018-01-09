@@ -9,13 +9,15 @@ var UserId;
 var currentTripId = "";
 
 var pageHistory = ['LoginPage'];
-var thisPage = document.getElementById('LoginPage');
+var thisPage;
 var currentlyTracking = false;
 
 function onDeviceReady() {
 
     if (UserId != null) {
         thisPage = document.getElementById('HomePage');
+    } else {
+        thisPage = document.getElementById('LoginPage');
     }
 
     toggleVisibility(thisPage);
@@ -69,7 +71,9 @@ document.getElementById('toggleTracker').addEventListener('click',
     function() {
         if (currentlyTracking === false) {
             currentlyTracking = true;
-            currentTripId = (S4() + S4() + "-" + S4() + "-4" + S4().substr(0, 3) + "-" + S4() + "-" + S4() + S4() + S4()).toLowerCase();
+            currentTripId =
+                (S4() + S4() + "-" + S4() + "-4" + S4().substr(0, 3) + "-" + S4() + "-" + S4() + S4() + S4())
+                .toLowerCase();
             tripHandler();
             document.getElementById('toggleTracker').innerHTML = "Stop";
         } else {
@@ -101,7 +105,8 @@ function UploadToDb(position) {
         }
     };
     xhttp.open("GET",
-        "http://localhost:53869/api/Trip?Lat=" + lat + "&Lon=" + lon + "&UserId=" + UserId + "&TripId=" + currentTripId, true);
+        "http://localhost:53869/api/Trip?Lat=" + lat + "&Lon=" + lon + "&UserId=" + UserId + "&TripId=" + currentTripId,
+        true);
     xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhttp.send();
 }
@@ -111,26 +116,33 @@ function onError(error) {
         'code: ' + error.code + '\n' + 'message: ' + error.message + '\n';
 }
 
-document.getElementById('registerSubmitButton').addEventListener('click', function () {
-    var firstName = document.getElementById('FirstNameInput');
-    var lastName = document.getElementById('LastNameInput');
-    var email = document.getElementById('Email');
-    newUser(firstName, lastName, email);
+document.getElementById('registerSubmitButton').addEventListener('click',
+    function() {
+        var firstName = document.getElementById('FirstNameInput').value;
+        var lastName = document.getElementById('LastNameInput').value;
+        var email = document.getElementById('Email').value;
+        newUser(firstName, lastName, email);
+    });
+
+document.getElementById('LoginButton').addEventListener('click', function() {
+    UserId = document.getElementById('UserIdLogin').value;
+    nextPage('HomePage');
 });
 
 function newUser(firstname, lastname, email) {
     var xhttp = new XMLHttpRequest();
 
-    xhttp.onreadystatechange = function () {
+    xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             var response = xhttp.responseText;
             UserId = response;
 
-            thisPage = document.getElementById('HomePage');
-            toggleVisibility(thisPage);
+            nextPage('HomePage');
         }
     };
-    xhttp.open("GET", "http://localhost:53869/api/User?FirstName=" + firstname + "&LastName=" + lastname + "&Email=" + email, true);
+    xhttp.open("GET",
+        "http://localhost:53869/api/User?FirstName=" + firstname + "&LastName=" + lastname + "&Email=" + email,
+        true);
     xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhttp.send();
 }

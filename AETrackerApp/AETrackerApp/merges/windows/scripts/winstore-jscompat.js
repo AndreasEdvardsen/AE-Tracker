@@ -124,7 +124,7 @@
 
             var cleanedNodes = [];
 
-            if (targetElement.tagName === 'HTML') {
+            if (targetElement.tagName === "HTML") {
                 cleanedNodes = Array.prototype.slice.call(document.adoptNode(cleaner.documentElement).childNodes);
             } else {
                 if (cleaner.head) {

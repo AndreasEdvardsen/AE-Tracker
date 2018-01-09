@@ -5,9 +5,7 @@ body {
     font-family: Arial;
 }
 
-.page {
-    
-}
+.page { }
 
 .page > h3 {
     text-align: center;
@@ -17,15 +15,16 @@ body {
     line-height: 3.5rem;
 }
 
-.page > h4 {
-    text-align: center;
-}
+.page > h4 { text-align: center; }
 
 .page > p { font-size: 1.2rem; }
 
 .page > * { width: 100%; }
 
-.page > input { height: 2rem; margin-bottom: 1rem;}
+.page > input {
+    height: 2rem;
+    margin-bottom: 1rem;
+}
 
 .page > h1 { margin-bottom: 3rem; }
 
@@ -39,6 +38,31 @@ body {
     transition: ease-in-out 0.5s;
 }
 
-#NewTripPage > h1 {
+#NewTripPage > h1 { text-align: left; }
+
+#LoggingContainer { }
+
+#LoggingList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#LoggingList > li {
+    vertical-align: middle;
+    background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
+    font-weight: bold;
+    padding: 0.1rem;
+    margin-bottom: 0.5rem;
+}
+
+#tripList {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+#map {
+    height: 15rem;
 }

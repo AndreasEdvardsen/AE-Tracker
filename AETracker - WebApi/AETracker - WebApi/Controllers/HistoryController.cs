@@ -1,7 +1,7 @@
-﻿using AETrackerWebApi;
+﻿using AETrackerWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AETracker___WebApi.Controllers
+namespace AETrackerWebApi.Controllers
 {
     [Produces("application/json")]
     [Route("api/History")]
@@ -16,19 +16,6 @@ namespace AETracker___WebApi.Controllers
             {
                 Trips = trips
             };
-            /*
-            var output = "";
-            foreach (var trip in trips)
-            {
-                output += $"UserId: {trip.UserId} TripId: {trip.TripId}";
-                foreach (var position in trip.Positions)
-                {
-                    output += $" Lat: {position.Lat} Lon: {position.Lon}";
-                }
-            }
-
-            return output;
-            */
         }
     }
 }

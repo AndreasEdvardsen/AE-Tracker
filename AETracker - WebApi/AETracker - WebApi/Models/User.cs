@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AETrackerWebApiebApi.Models
+namespace AETrackerWebApi.Models
 {
     public class User
     {

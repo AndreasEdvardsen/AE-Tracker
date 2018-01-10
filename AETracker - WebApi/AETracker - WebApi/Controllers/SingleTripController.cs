@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AETrackerWebApi;
-using AETrackerWebApi.Models;
-using Microsoft.AspNetCore.Http;
+﻿using AETrackerWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AETracker___WebApi.Controllers
+namespace AETrackerWebApi.Controllers
 {
     [Produces("application/json")]
     [Route("api/SingleTrip")]

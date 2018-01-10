@@ -1,5 +1,5 @@
 ﻿using System.Data.SqlClient;
-using AETrackerWebApiebApi.Models;
+using AETrackerWebApi.Models;
 using NuGet.Frameworks;
 
 namespace AETrackerWebApi

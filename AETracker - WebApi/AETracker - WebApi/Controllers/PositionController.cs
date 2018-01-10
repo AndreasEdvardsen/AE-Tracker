@@ -5,7 +5,7 @@ namespace AETrackerWebApi.Controllers
 {
     [Produces("application/json")]
     [Route("api/Trip")]
-    public class TripController : Controller
+    public class PositionController : Controller
     {
         [HttpGet]
         public string NewPosition([FromQuery] Position newPos)

@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using AETrackerWebApi.Models;
 
-namespace AETrackerWebApi
+namespace AETrackerWebApi.DBLayer
 {
     public class NewPositionToDb
     {

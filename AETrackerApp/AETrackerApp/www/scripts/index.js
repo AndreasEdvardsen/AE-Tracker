@@ -5,7 +5,7 @@
 
 document.addEventListener("deviceready", onDeviceReady.bind(this), false);
 
-var UserId = "68BE74A7-D3D8-46F4-A028-F085DDC49F13";
+var UserId;
 var currentTripId = "";
 
 var pageHistory = ["LoginPage"];

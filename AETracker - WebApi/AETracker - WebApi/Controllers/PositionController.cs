@@ -1,4 +1,5 @@
-﻿using AETrackerWebApi.Models;
+﻿using AETrackerWebApi.DBLayer;
+using AETrackerWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AETrackerWebApi.Controllers

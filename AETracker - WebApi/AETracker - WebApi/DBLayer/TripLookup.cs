@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using AETrackerWebApi.Models;
@@ -26,7 +27,7 @@ namespace AETrackerWebApi
                 {
                     trip.Positions.Add(new Position
                     {
-                        UserId = userId,
+                        UserId = Guid.Parse(userId),
                         TripId = reader[3].ToString(),
                         Lat = (double) reader[1],
                         Lon = (double) reader[2]
@@ -68,7 +69,7 @@ namespace AETrackerWebApi
                 trip.Positions.Add(new Position
                 {
                     TripId = tripId,
-                    UserId = userId,
+                    UserId = Guid.Parse(userId),
                     Lat = (double) reader[1],
                     Lon = (double) reader[2]
                 });
